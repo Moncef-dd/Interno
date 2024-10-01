@@ -25,8 +25,8 @@ try:
     applicationLinks = child.find_all('a').text.strip()
 
     jobItems.append({
-      'Title': positionTitle; 
-      'Company': companyName; 
+      'Title': positionTitle,
+      'Company': companyName, 
       'Links': applicationLinks
     })
 
