@@ -4,14 +4,10 @@ from bs4 import BeautifulSoup
 import pandas as pd 
 
 
-
-
-
 driver = webdriver.Chrome(executable_path="C:/Users/DELL/Downloads/chrome-win64/chrome.exe")
 
 JobMarketUrl = "https://www.levels.fyi/jobs/location/canada/level/internship?jobFamilySlugs=software-engineer%2Cdata-scientist"
 driver.get(JobMarketUrl)
-
 
 soup = BeautifulSoup(driver.page_source, 'html.parser')
 
@@ -28,6 +24,15 @@ try:
     positionTitle = child.find_all('div', class_='company-jobs-preview-card_companyJobTitle__HhXIR').text.strip()
     applicationLinks = child.find_all('a').text.strip()
 
-except: 
-  print("an error has occured while ")
+    jobItems.append({
+      'Title': positionTitle; 
+      'Company': companyName; 
+      'Links': applicationLinks
+    })
 
+except: 
+  print("an error has occured while parsing data")
+
+
+df = pd.DataFrame(jobItems) 
+df.to_csv('internshipsOpportunities_from_levelsFyi.csv', index=False)
