@@ -26,7 +26,8 @@ To run this script, you need the following:
    ```bash
    pip install selenium beautifulsoup4 requests pandas
 
-   
+## What is next? 
+ - Working on an optimal way to customize applications based on the opportunity title & the company name.   
    
 ## PS: 
    - Consider re-structure your parser if you want to use the script on a different careers website
