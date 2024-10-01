@@ -13,4 +13,11 @@ driver.get(JobMarketUrl)
 soup = BeautifulSoup(driver.page_source, 'html.parser')
 
 
- 
+jobItemsParent = soup.find_all('div', class_ = 'company-jobs-preview-card_container__T3XI1')
+jobItems = []
+
+# Parent className =  company-jobs-preview-card_container__T3XI1
+for child in jobItemsParent.find_all(recursive = False):
+    jobItems.append(child) 
+
+
